@@ -1,0 +1,39 @@
+# Choose Minikube as the Default Local Kubernetes Cluster
+
+
+## Context
+
+The project needs a default local Kubernetes cluster for development, testing, and learning workflows. Several tools can be used for this purpose, including Minikube, kind, k3d, and Docker Desktop Kubernetes.
+
+The main decision criterion is standardization. The default tool should be widely recognized, commonly documented, and familiar to the broadest number of Kubernetes users. A standard choice reduces onboarding friction, makes team communication easier, and increases the chance that examples and troubleshooting guidance from the Kubernetes community will apply directly.
+
+## Decision
+
+Minikube should be chosen as the default local Kubernetes cluster.
+
+Minikube is the most standard local Kubernetes tool compared to the common alternatives. It is a long-established and widely known option in the Kubernetes ecosystem. Because of that, it is often the first local cluster solution people encounter in tutorials, documentation, demos, and community discussions.
+
+Choosing Minikube as the default improves consistency by aligning the project with the most broadly recognized local Kubernetes setup. This makes the project easier to understand for new contributors and lowers the cost of local environment setup.
+
+Other local cluster solutions may be better optimized for specific use cases, such as lightweight CI workflows or faster ephemeral cluster creation, but those advantages do not outweigh the value of using the most standard and widely understood default.
+
+## Consequences
+
+Positive consequences:
+
+- Local setup guidance will use Minikube as the primary reference implementation.
+- New contributors are more likely to already know the tool or find relevant documentation quickly.
+- Project examples and troubleshooting steps can rely on a mainstream, familiar local Kubernetes environment.
+
+Negative consequences:
+
+- Some users may prefer alternative tools that are faster or more specialized for their workflow.
+- Additional documentation may still be needed later if the project decides to support alternative local clusters.
+
+## Alternatives Considered
+
+- **kind**: kind is popular and well suited for container-based testing and CI-style scenarios, but it is less standard as a general default local Kubernetes environment for broad developer onboarding.
+
+- **k3d**: k3d is lightweight and efficient, but it is more specialized and less universally treated as the baseline local Kubernetes option.
+
+- **Docker Desktop Kubernetes**: Docker Desktop Kubernetes is convenient for some users, but it is tied to a specific desktop platform and is not as neutral or standard as Minikube for cross-environment project guidance.
