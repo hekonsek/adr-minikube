@@ -1,0 +1,5 @@
+syllabus:
+  description: Guidance for Minikube architecture and tooling choices.
+  topics:
+    - Minikube vs alternatives
+      - Minikube as standard
