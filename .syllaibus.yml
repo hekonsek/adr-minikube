@@ -3,3 +3,12 @@ syllabus:
   topics:
     - Minikube vs alternatives
       - Minikube as standard
+    - Drivers
+      - Docker
+        - Default driver for Minikube
+      - VirtualBox
+      - Hyper-V
+      - KVM
+    - Limits
+      - Default limits for Minikube
+      - Customizing limits
