@@ -9,6 +9,8 @@ Kubernetes stores Secret objects in etcd as part of cluster state. When Minikube
 
 An unused Minikube profile is therefore not just harmless leftover configuration. It can retain cluster state, including Secret data, certificates, and other sensitive Kubernetes objects, even when the profile is no longer actively used for development.
 
+If an attacker gains local access to the developer machine or otherwise reaches the Docker-managed Minikube node, that retained state can be extracted in practical ways. For example, an attacker may `docker exec` into the Minikube container or node and use `etcdctl` to enumerate and read Kubernetes data including Secret objects. An attacker may also use `docker cp` to copy the etcd BoltDB data files out of the Minikube container for later offline analysis and secret extraction.
+
 This creates an avoidable persistence risk:
 
 - old local clusters may continue to hold credentials that are no longer needed
