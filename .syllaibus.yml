@@ -12,3 +12,6 @@ syllabus:
     - Limits
       - Default limits for Minikube
       - Customizing limits
+    - Security
+      - Secrets exposure risk
+      - Secrets are kept in Docker storage for etcd pod 
